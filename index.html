@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MARIA CRUZ MODAS</title>
+  <link rel="stylesheet" href="style.css?v999">
+  <script src="scripts.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <!-- MENU LATERAL -->
+    <div id="menu-lateral" class="menu-lateral">
+      <div id="abrirmenu">☰</div>
+      <div class="menu-topo">
+        <span>Categorias</span>
+        <span id="fecharmenu">&times;</span>
+      </div>
+
+      <ul class="menu-categorias">
+        <li data-filtro="todos">Todos</li>
+        <li data-filtro="vestidos">Vestidos</li>
+        <li data-filtro="batinhas">Batinhas</li>
+        <li data-filtro="croppeds">Croppeds</li>
+        <li data-filtro="blusas">Blusas</li>
+        <li data-filtro="bodys">Bodys</li>
+        <li data-filtro="conjuntos">Conjuntos</li>
+        <li data-filtro="short-saia">Short Saia</li>
+      </ul>
+    </div>
+
+    <!-- FUNDO ESCURO -->
+    <div id="overlay-menu"></div>
+
+    <div class="header-top">
+      <!-- Ícone esquerdo (menu) -->
+      <div class="left-icons" id="icon-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <!-- Logo central -->
+      <div class="logo">
+        <h1>MARIA CRUZ MODAS</h1>
+        <p>Unimos qualidade, conforto e preço justo</p>
+      </div>
+
+      <!-- Direita: barra de pesquisa + carrinho -->
+      <div class="right-icons">
+        <a href="carrinho.html" class="icone-carrinho"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+    </div>
+  </header>
+
+
+
+  <main>
+    <section class="sobre">
+      <h3>Nova Coleção de Inauguração💜</h3>
+
+      <div class="barra-pesquisa">
+        <input type="text" id="search-input" placeholder="Buscar produtos...">
+
+        <span id="clear-search" title="Limpar busca" style="display:none; cursor:pointer;">&times;</span>
+      </div>
+    </section>
+
+    <!-- GRID DE PRODUTOS -->
+    <section id="produtos" class="produtos">
+      <div class="produto" data-category="vestidos">
+        <div class="imagem-produto-wrap">
+          <img src="./img/frente vestido kauane.jpeg" alt="Vestido Kauane" class="imagem-produto">
+        </div>
+        <p class="nome">Vestido Kauane<br>com short por baixo</p>
+        <p class="preco">R$ 80,00</p>
+        <button class="btn">Comprar</button>
+      </div>
+
+      <div class="produto" data-category="batinhas">
+        <div class="imagem-produto-wrap">
+          <img src="./img/batinha larissa.jpeg" alt="Batinha Larissa" class="imagem-produto">
+        </div>
+        <p class="nome">Batinha Luana</p>
+        <p class="preco">R$ 45,00</p>
+        <button class="btn">Comprar</button>
+      </div>
+
+      <div class="produto" data-category="croppeds">
+        <div class="imagem-produto-wrap">
+          <img src="./img/cropped victoria.jpeg" alt="Cropped Victória" class="imagem-produto">
+        </div>
+        <p class="nome">Cropped Victória</p>
+        <p class="preco">R$ 45,00</p>
+        <button class="btn">Comprar</button>
+      </div>
+
+      <div class="produto" data-category="blusas">
+        <div class="imagem-produto-wrap">
+          <img src="./img/blusa leticia azul.jpeg" alt="Blusa Letícia" class="imagem-produto">
+        </div>
+        <p class="nome">Blusa Letícia</p>
+        <p class="preco">R$ 50,00</p>
+        <button class="btn">Comprar</button>
+      </div>
+
+      <div class="produto" data-category="bodys">
+        <div class="imagem-produto-wrap">
+          <img src="./img/body lohanny com fivela branco.jpeg" alt="Body Lohanny" class="imagem-produto">
+        </div>
+        <p class="nome">Body Lohanny<br>com fivela slim</p>
+        <p class="preco">R$ 35,00</p>
+        <button class="btn">Comprar</button>
+      </div>
+
+      <div class="produto" data-category="bodys">
+        <div class="imagem-produto-wrap">
+          <img src="./img/body plus beatriz.jpeg" alt="Body Plus Beatriz" class="imagem-produto">
+        </div>
+        <p class="nome">Body Plus Beatriz</p>
+        <p class="preco">R$ 60,00</p>
+        <button class="btn">Comprar</button>
+      </div>
+
+      <div class="produto" data-category="conjuntos">
+        <div class="imagem-produto-wrap">
+          <img src="./img/conjunto ohana.jpeg" alt="Conjunto Ohana" class="imagem-produto">
+        </div>
+        <p class="nome">Conjunto Ohana</p>
+        <p class="preco">R$ 130,00</p>
+        <button class="btn">Comprar</button>
+      </div>
+
+      <div class="produto" data-category="short-saia">
+        <div class="imagem-produto-wrap">
+          <img src="./img/short saia luana frente.jpeg" alt="Short Saia Priscila" class="imagem-produto">
+        </div>
+        <p class="nome">Short Saia Priscila</p>
+        <p class="preco">R$ 50,00</p>
+        <button class="btn">Comprar</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL DE PRODUTO -->
+  <div id="modal-produto" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <div class="topo-modal">
+        <span class="" id="voltar-home">&times;</span>
+      </div>
+
+      <img src="" alt="Produto selecionado" id="modal-img">
+      <h2 id="modal-nome"></h2>
+      <p id="modal-preco"></p>
+
+      <div class="opcoes">
+        <div class="cores">
+          <h4>Cores:</h4>
+          <div class="cores-lista">
+            <span class="cor" style="background:#fff;"></span>
+            <span class="cor" style="background:#000;"></span>
+            <span class="cor" style="background:#b8a17d;"></span>
+            <span class="cor" style="background:#8bb4a1;"></span>
+          </div>
+        </div>
+
+        <div class="tamanhos">
+          <h4>Tamanho:</h4>
+          <select id="tamanho">
+            <option>P</option>
+            <option>M</option>
+            <option>G</option>
+            <option>GG</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="quantidade">
+        <h4>Quantidade:</h4>
+        <div class="qtd-controle">
+          <input type="number" id="qtd" value="1" min="1">
+        </div>
+      </div>
+
+      <!-- pagamento e endereco ficam escondidos até clicar em Finalizar Compra -->
+      <div class="pagamento" style="display:none;">
+        <h4>Forma de pagamento:</h4>
+        <select id="pagamento">
+          <option>Pix</option>
+          <option>Cartão</option>
+          <option>Dinheiro</option>
+        </select>
+      </div>
+
+      <div class="endereco" style="display:none;">
+        <h4>Endereço de entrega:</h4>
+        <textarea id="endereco" placeholder="Digite seu endereço completo"></textarea>
+      </div>
+
+      <div class="botoes-modal">
+        <button class="btn adicionar-carrinho" id="add-carrinho"><i class="fas fa-cart-plus"></i> Adicionar ao
+          carrinho</button>
+        <button class="btn btn-modal" id="finalizar-pedido">Finalizar Compra</button>
+      </div>
+    </div>
+  </div>
+
+
+  <footer id="contato">
+    <p>© 2025 MARIA CRUZ MODAS<br>
+      (81) 99664 - 8917 || @mariacruzmoda — Todos os direitos reservados</p>
+  </footer>
+
+</body>
+<script>
+  document.getElementById("search-input").addEventListener("input", function () {
+    const termo = this.value.toLowerCase().trim();
+    const produtos = document.querySelectorAll(".produto");
+
+    produtos.forEach(produto => {
+      const nome = produto.querySelector(".nome").textContent.toLowerCase();
+
+      if (nome.includes(termo)) {
+        produto.style.display = ""; // volta ao padrão do CSS
+      } else {
+        produto.style.display = "none"; // esconde
+      }
+    });
+  });
+
+  const searchInput = document.getElementById("search-input");
+  const clearBtn = document.getElementById("clear-search");
+  const produtos = document.querySelectorAll(".produto");
+
+  // Evento de digitar
+  searchInput.addEventListener("input", function () {
+    const termo = this.value.toLowerCase().trim();
+
+    // Mostrar ou esconder o X
+    clearBtn.style.display = termo.length > 0 ? "block" : "none";
+
+    produtos.forEach(produto => {
+      const nome = produto.querySelector(".nome").textContent.toLowerCase();
+
+      if (nome.includes(termo)) {
+        produto.style.display = "";
+      } else {
+        produto.style.display = "none";
+      }
+    });
+  });
+
+  // Evento do botão X
+  clearBtn.addEventListener("click", function () {
+    searchInput.value = "";
+    clearBtn.style.display = "none";
+
+    // Mostrar todos os produtos novamente
+    produtos.forEach(produto => {
+      produto.style.display = "";
+    });
+  });
+
+  // ------------------------
+  // ABRIR MODAL DE PRODUTO
+  // ------------------------
+  const modal = document.getElementById("modal-produto");
+  const modalImg = document.getElementById("modal-img");
+  const modalNome = document.getElementById("modal-nome");
+  const modalPreco = document.getElementById("modal-preco");
+
+  const botoesComprar = document.querySelectorAll(".produto .btn");
+  // pegar a imagem e textos certinho
+  botoesComprar.forEach(botao => {
+    botao.addEventListener("click", function () {
+      const produto = this.closest(".produto");
+
+      const img = produto.querySelector(".imagem-produto").src;
+      const nome = produto.querySelector(".nome").textContent;
+      const preco = produto.querySelector(".preco").textContent;
+
+      modalImg.src = img;
+      modalNome.textContent = nome;
+      modalPreco.textContent = preco;
+
+      modal.style.display = "flex";  // ABRIR MODAL
+    });
+  });
+
+  // ------------------------
+  // FECHAR MODAL
+  // ------------------------
+  document.querySelector(".fechar").onclick = function () {
+    modal.style.display = "none";
+  };
+
+  document.getElementById("voltar-home").onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // fechar clicando fora do modal
+  window.onclick = function (e) {
+    if (e.target === modal) modal.style.display = "none";
+  };
+  // ----------------------
+  // CARRINHO (localStorage)
+  // ----------------------
+  function getCarrinho() {
+    return JSON.parse(localStorage.getItem("carrinho")) || [];
+  }
+
+  function salvarCarrinho(carrinho) {
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  }
+
+  // Botão "Adicionar ao carrinho"
+  document.getElementById("add-carrinho").addEventListener("click", function () {
+
+    const nome = document.getElementById("modal-nome").textContent;
+    const preco = document.getElementById("modal-preco").textContent.replace("R$ ", "").replace(",", ".");
+    const imagem = document.getElementById("modal-img").src;
+    const tamanho = document.getElementById("tamanho").value;
+    const quantidade = parseInt(document.getElementById("qtd").value);
+
+    // pega a cor selecionada
+    let corSelecionada = document.querySelector(".cor.selecionada");
+    const cor = corSelecionada ? corSelecionada.style.backgroundColor : "Padrão";
+
+    let carrinho = getCarrinho();
+
+    // verifica se o item já existe
+    const itemExistente = carrinho.find(item =>
+      item.nome === nome &&
+      item.tamanho === tamanho &&
+      item.cor === cor
+    );
+
+    if (itemExistente) {
+      itemExistente.quantidade += quantidade;
+    } else {
+      carrinho.push({
+        nome: nome,
+        preco: Number(preco),
+        imagem: imagem,
+        tamanho: tamanho,
+        cor: cor,
+        quantidade: quantidade
+      });
+    }
+
+    salvarCarrinho(carrinho);
+    alert("Produto adicionado ao carrinho!");
+  });
+  // Selecionar cor
+  const cores = document.querySelectorAll(".cor");
+  cores.forEach(c => {
+    c.addEventListener("click", function () {
+      cores.forEach(c2 => c2.classList.remove("selecionada"));
+      this.classList.add("selecionada");
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+
+    const menu = document.getElementById('menu-lateral');
+    const fechar = document.getElementById('fechar-menu');
+    const abrir = document.getElementById('abrir-menu');
+
+    if (abrir) {
+      abrir.addEventListener('click', function () {
+        menu.classList.add('ativo');
+      });
+    }
+
+    if (fechar) {
+      fechar.addEventListener('click', function () {
+        menu.classList.remove('ativo');
+      });
+    }
+
+  });
+
+  document.querySelector('.menu-lateral').style.left = '0px'
+
+</script>
+
+</html>

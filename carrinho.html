@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carrinho - Maria Cruz Modas</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header>
+  <div class="header-top">
+    <div class="left-icons">
+      <a href="index.html" style="color:inherit; text-decoration:none;"><i class="fas fa-arrow-left"></i></a>
+    </div>
+    <div class="logo">
+      <h1>MARIA CRUZ MODAS</h1>
+    </div>
+    <div class="right-icons">
+      <a href="index.html" style="color:inherit; text-decoration:none;"><i class="fas fa-home"></i></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="carrinho-wrap">
+    <h2 style="color:var(--gold); margin-bottom:12px;">Meu Carrinho</h2>
+    <div id="lista-itens"></div>
+
+    <div id="resumo" style="margin-top:18px;">
+      <p style="color:var(--muted);">Total: <span id="total-geral">R$ 0,00</span></p>
+    </div>
+
+    <div style="margin-top:18px;">
+      <h3 style="color:var(--muted); margin-bottom:8px;">Confirme dados para finalizar</h3>
+      <label style="color:var(--muted); display:block; margin-bottom:6px;">Forma de pagamento</label>
+      <select id="pagamento-carrinho" style="padding:8px; border-radius:8px; border:1.5px solid var(--gold); background:transparent; color:#fff;">
+        <option>Pix</option>
+        <option>Cartão</option>
+        <option>Dinheiro</option>
+      </select>
+
+      <label style="color:var(--muted); display:block; margin:12px 0 6px;">Endereço de entrega</label>
+      <textarea id="endereco-carrinho" placeholder="Digite seu endereço completo" style="width:100%; min-height:80px; border-radius:8px; border:1.5px solid var(--gold); padding:8px; background:transparent; color:#fff;"></textarea>
+
+      <button id="finalizar-carrinho" class="btn-finalizar" style="margin-top:12px;">Finalizar pelo WhatsApp</button>
+    </div>
+  </section>
+</main>
+
+<footer style="text-align:center; padding:18px; color:rgba(255,255,255,0.6);">
+  © 2025 Zona Zero — Todos os direitos reservados
+</footer>
+
+<script>
+  const cartKey = 'mc_cart_v1';
+  let cart = JSON.parse(localStorage.getItem(cartKey) || '[]');
+
+  function formatBRL(n) {
+    return 'R$ ' + Number(n).toFixed(2).replace('.', ',');
+  }
+
+  function renderCart() {
+    const lista = document.getElementById('lista-itens');
+    lista.innerHTML = '';
+    let total = 0;
+    if (!cart || cart.length === 0) {
+      lista.innerHTML = `<p style="color:var(--muted);">Seu carrinho está vazio.</p>`;
+    } else {
+      cart.forEach((item, idx) => {
+        const subtotal = item.precoUnit * item.quantidade;
+        total += subtotal;
+        const div = document.createElement('div');
+        div.className = 'carrinho-item';
+        div.innerHTML = `
+          <img src="${item.imagem || './img/frente vestido kauane.jpeg'}" alt="${item.nome}">
+          <div class="meta">
+            <h4>${item.nome}</h4>
+            <p>${formatBRL(item.precoUnit)} x ${item.quantidade} = ${formatBRL(subtotal)}</p>
+            <p style="color:var(--muted);">Tamanho: ${item.tamanho} • Cor: ${item.cor}</p>
+          </div>
+          <div class="carrinho-controls">
+            <button data-idx="${idx}" class="menos-carrinho btn" style="padding:6px; border-radius:6px; border:1px solid var(--gold); background:transparent; color:var(--gold);">-</button>
+            <span style="color:#fff; margin:0 8px;">${item.quantidade}</span>
+            <button data-idx="${idx}" class="mais-carrinho btn" style="padding:6px; border-radius:6px; border:1px solid var(--gold); background:transparent; color:var(--gold);">+</button>
+            <button data-idx="${idx}" class="remover-carrinho btn" style="padding:6px; border-radius:6px; border:1px solid #ff6b6b; background:transparent; color:#ff6b6b;">Remover</button>
+          </div>
+        `;
+        lista.appendChild(div);
+      });
+    }
+    document.getElementById('total-geral').textContent = formatBRL(total);
+    bindCartButtons();
+  }
+
+  function bindCartButtons() {
+    document.querySelectorAll('.mais-carrinho').forEach(btn => {
+      btn.onclick = () => {
+        const idx = Number(btn.getAttribute('data-idx'));
+        cart[idx].quantidade = Number(cart[idx].quantidade) + 1;
+        salvar();
+        renderCart();
+      };
+    });
+    document.querySelectorAll('.menos-carrinho').forEach(btn => {
+      btn.onclick = () => {
+        const idx = Number(btn.getAttribute('data-idx'));
+        if (cart[idx].quantidade > 1) {
+          cart[idx].quantidade = Number(cart[idx].quantidade) - 1;
+        } else {
+          cart.splice(idx, 1);
+        }
+        salvar();
+        renderCart();
+      };
+    });
+    document.querySelectorAll('.remover-carrinho').forEach(btn => {
+      btn.onclick = () => {
+        const idx = Number(btn.getAttribute('data-idx'));
+        cart.splice(idx, 1);
+        salvar();
+        renderCart();
+      };
+    });
+  }
+
+  function salvar() {
+    localStorage.setItem(cartKey, JSON.stringify(cart));
+  }
+
+  document.getElementById('finalizar-carrinho').addEventListener('click', () => {
+    const pagamento = document.getElementById('pagamento-carrinho').value;
+    const endereco = document.getElementById('endereco-carrinho').value || 'Não informado';
+    const numero = '5581999999999'; // substitua pelo número real
+
+    if (!cart || cart.length === 0) {
+      alert('Seu carrinho está vazio.');
+      return;
+    }
+
+    let mensagem = 'Olá, tenho interesse nos seguintes produtos da Maria Cruz Modas:%0A%0A';
+    cart.forEach(item => {
+      mensagem += `Produto: ${item.nome} | Quantidade: ${item.quantidade} | Preço unitário: ${formatBRL(item.precoUnit)} | Cor: ${item.cor} | Tamanho: ${item.tamanho}%0A`;
+    });
+    mensagem += `%0ATotal: ${document.getElementById('total-geral').textContent}%0AForma de pagamento: ${pagamento}%0AEndereço de entrega: ${endereco}%0A%0APor favor confirme a disponibilidade.`;
+
+    const link = `https://wa.me/${numero}?text=${mensagem}`;
+    window.open(link, '_blank');
+  });
+
+  renderCart();
+
+  const lista = document.getElementById("lista-carrinho");
+
+  const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+  carrinho.forEach(item => {
+    lista.innerHTML += `
+      <div class="item">
+        <img src="${item.imagem}">
+        <p>${item.nome}</p>
+        <p>Cor: ${item.cor}</p>
+        <p>Tamanho: ${item.tamanho}</p>
+        <p>Qt: ${item.quantidade}</p>
+        <p>R$ ${(item.preco * item.quantidade).toFixed(2)}</p>
+      </div>
+    `;
+  });
+
+</script>
+</body>
+</html>
