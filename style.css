@@ -72,7 +72,7 @@ header{
 
 .logo p{
   font-family: 'Playfair';
-  font-size:20px;
+  font-size:15px;
   color:#C7A96B;
   margin-left:55px;
 }
@@ -97,7 +97,7 @@ header{
 
 .sobre h3{
   font-family:'Playfair';
-  font-size:15px;
+  font-size:10px;
   color:#fff;
   padding:20px;
 }
@@ -302,6 +302,7 @@ footer{
     font-size:15px;
   }
 }
+
 
 
 
