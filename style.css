@@ -49,7 +49,7 @@ header{
 .logo h1{
   font-family: 'Gwendolyn';
   font-size:55px;
-  font-weight:500px;
+  font-weight:300;
   color:#fff;
   margin-left:40px;
 }
@@ -302,6 +302,7 @@ footer{
     font-size:15px;
   }
 }
+
 
 
 
