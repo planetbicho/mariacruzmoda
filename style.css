@@ -45,14 +45,13 @@ header{
   color: #C7A96B;
   margin-left:-10px;
 }
-.icone-carrinho {
-    text-decoration: none;
-    color: var(--dourado); /* Usa a mesma cor dourada do logo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-    z-index: 10; /* Garante que fique acima da linha */
+.left-icons i,
+.right-icons i {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* aproxima pesquisa + carrinho */
+  color: #C7A96B;
+  margin-higth:10px;
 }
 
 .icone-carrinho:hover {
@@ -324,6 +323,7 @@ footer{
     font-size:15px;
   }
 }
+
 
 
 
