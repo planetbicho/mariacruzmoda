@@ -75,6 +75,7 @@ header{
   font-size:15px;
   color:#C7A96B;
   margin-left:55px;
+  margin-top: 5px;
 }
 
 .barra-pesquisa input {
@@ -302,6 +303,7 @@ footer{
     font-size:15px;
   }
 }
+
 
 
 
