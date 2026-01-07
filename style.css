@@ -50,7 +50,7 @@ header{
   display: flex;
   align-items: center;
   color:#C7A96B;
-  margin-left:10px;
+  
 }
 
 
@@ -312,6 +312,7 @@ footer{
     font-size:15px;
   }
 }
+
 
 
 
