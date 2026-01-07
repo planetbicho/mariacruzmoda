@@ -43,6 +43,7 @@ header{
   align-items: center;
   gap: 8px; /* aproxima pesquisa + carrinho */
   color: #C7A96B;
+  margin-left:-10px;
 }
 
 
@@ -51,7 +52,7 @@ header{
   font-size:55px;
   font-weight:700;
   color:#fff;
-  margin-left:-5px;
+  margin-left:-10px;
 }
 .logo {
   position: relative;
@@ -71,11 +72,11 @@ header{
 }
 
 .logo p{
-  font-family: 'Playfair+Display';
+  font-family: 'Playfair';
   font-size:15px;
   color:#C7A96B;
   margin-left:55px;
-  margin-top: -5px;
+  margin-top: -10px;
 }
 
 .barra-pesquisa input {
@@ -303,6 +304,7 @@ footer{
     font-size:15px;
   }
 }
+
 
 
 
