@@ -48,7 +48,7 @@ header{
 
 .logo h1{
   font-family: 'Gwendolyn';
-  font-size:45px;
+  font-size:55px;
   font-weight:700;
   color:#fff;
   margin-left:40px;
@@ -71,8 +71,8 @@ header{
 }
 
 .logo p{
-  font-family: 'playfair';
-  font-size:12px;
+  font-family: 'Playfair';
+  font-size:20px;
   color:#C7A96B;
   margin-left:55px;
 }
@@ -301,6 +301,7 @@ footer{
     font-size:15px;
   }
 }
+
 
 
 
