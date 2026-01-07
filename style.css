@@ -49,7 +49,7 @@ header{
 .logo h1{
   font-family: 'Gwendolyn';
   font-size:55px;
-  font-weight:700;
+  font-weight:600;
   color:#fff;
   margin-left:40px;
 }
@@ -97,7 +97,7 @@ header{
 
 .sobre h3{
   font-family:'Playfair';
-  font-size:10px;
+  font-size:15px;
   color:#fff;
   padding:20px;
 }
@@ -302,6 +302,7 @@ footer{
     font-size:15px;
   }
 }
+
 
 
 
