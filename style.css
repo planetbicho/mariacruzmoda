@@ -6,7 +6,7 @@
   --accent:#0e3a37;
   --radius:14px;
   --max-width:1200px;
-  font-family: 'Orbitron', system-ui, Arial, sans-serif;
+  font-family: 'Playfair', system-ui, Arial, sans-serif;
   box-sizing: border-box;
 }
 
@@ -47,8 +47,8 @@ header{
 
 
 .logo h1{
-  font-family: 'Allura';
-  font-size:70px;
+  font-family: 'Efese';
+  font-size:50px;
   font-weight:700;
   color:#fff;
   margin-left:40px;
@@ -71,7 +71,7 @@ header{
 }
 
 .logo p{
-  font-family: 'Orbiton';
+  font-family: 'Playfair';
   font-size:12px;
   color:#C7A96B;
   margin-left:55px;
@@ -301,6 +301,7 @@ footer{
     font-size:15px;
   }
 }
+
 
 
 
