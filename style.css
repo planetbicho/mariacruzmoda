@@ -47,10 +47,10 @@ header{
 
 
 .logo h1{
-  font-family: 'Ephesis&family', cursive;
-  font-size:30px;
+  font-family: 'Ephesis', cursive;
+  font-size:10px;
   font-weight:700;
-  color:#fff;
+  color:#000;
   margin-left:40px;
 }
 .logo {
@@ -301,6 +301,7 @@ footer{
     font-size:15px;
   }
 }
+
 
 
 
