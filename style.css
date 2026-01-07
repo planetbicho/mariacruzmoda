@@ -47,6 +47,7 @@ header{
 
 
 .logo h1{
+  font-family: 'Allura', cursive;
   font-size:30px;
   font-weight:700;
   color:#fff;
@@ -299,3 +300,4 @@ footer{
     font-size:15px;
   }
 }
+
