@@ -45,12 +45,24 @@ header{
   color: #C7A96B;
   margin-left:-10px;
 }
-.left-icons i,
-.right-icons {
-  display: flex;
-  align-items: center;
-  color:#C7A96B;
-  
+.icone-carrinho {
+    text-decoration: none;
+    color: var(--dourado); /* Usa a mesma cor dourada do logo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    z-index: 10; /* Garante que fique acima da linha */
+}
+
+.icone-carrinho:hover {
+    transform: scale(1.1); /* Efeito de aumentar levemente ao passar o mouse */
+}
+
+.material-symbols-outlined {
+    font-size: 28px; /* Ajuste o tamanho do ícone aqui */
+    /* Se quiser o ícone mais fino ou grosso: */
+    font-variation-settings: 'wght' 300, 'opsz' 24; 
 }
 
 
@@ -312,6 +324,7 @@ footer{
     font-size:15px;
   }
 }
+
 
 
 
