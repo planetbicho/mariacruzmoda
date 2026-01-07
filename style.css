@@ -51,7 +51,7 @@ header{
   align-items: center;
   gap: 8px; /* aproxima pesquisa + carrinho */
   color: #C7A96B;
-  margin-higth:10px;
+  margin-higth:15px;
 }
 
 .icone-carrinho:hover {
@@ -323,6 +323,7 @@ footer{
     font-size:15px;
   }
 }
+
 
 
 
