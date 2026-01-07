@@ -49,9 +49,9 @@ header{
 .logo h1{
   font-family: 'Gwendolyn';
   font-size:55px;
-  font-weight:300;
+  font-weight:700;
   color:#fff;
-  margin-left:40px;
+  margin-left:50px;
 }
 .logo {
   position: relative;
@@ -302,6 +302,7 @@ footer{
     font-size:15px;
   }
 }
+
 
 
 
