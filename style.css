@@ -6,7 +6,7 @@
   --accent:#0e3a37;
   --radius:14px;
   --max-width:1200px;
-
+  font-family:'Playfair';
   box-sizing: border-box;
 }
 
@@ -302,6 +302,7 @@ footer{
     font-size:15px;
   }
 }
+
 
 
 
