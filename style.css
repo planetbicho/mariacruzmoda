@@ -38,11 +38,11 @@ header{
 }
 
 .left-icons i,
-.right-icons {
+.right-icons i {
   display: flex;
   align-items: center;
   gap: 8px; /* aproxima pesquisa + carrinho */
-  color:#C7A96B;
+  background:#C7A96B;
 }
 
 
@@ -300,4 +300,5 @@ footer{
     font-size:15px;
   }
 }
+
 
