@@ -71,7 +71,7 @@ header{
 }
 
 .logo p{
-  font-family: 'Playfair';
+  font-family: 'Playfair+Display';
   font-size:15px;
   color:#C7A96B;
   margin-left:55px;
@@ -302,6 +302,7 @@ footer{
     font-size:15px;
   }
 }
+
 
 
 
