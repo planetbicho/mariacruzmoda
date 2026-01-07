@@ -96,7 +96,8 @@ header{
 }
 
 .sobre h3{
-  font-size:25px;
+  font-family:'Playfair';
+  font-size:15px;
   color:#fff;
   padding:20px;
 }
@@ -301,6 +302,7 @@ footer{
     font-size:15px;
   }
 }
+
 
 
 
